@@ -25,11 +25,17 @@ console.log(result3);   // true
 
 function mySome(array, cb) {
     // Your code here
+    for (let item = 0; item < array.length; item++) { 
+        if (cb(array[item], item)) {
+            return true;
+        }
+    }
+    return false;
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {
     module.exports = mySome;
-} catch(e) {
+} catch (e) {
     return null;
 }
